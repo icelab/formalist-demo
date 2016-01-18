@@ -9,25 +9,6 @@ GIT
       inflecto (>= 0.0.2)
 
 GIT
-  remote: https://github.com/dryrb/dry-data
-  revision: f19956a24b47b31fac4c53a7e320e5472224a251
-  specs:
-    dry-data (0.2.1)
-      dry-container (~> 0.2)
-      inflecto (~> 0.0.0, >= 0.0.2)
-      kleisli (~> 0.2)
-
-GIT
-  remote: https://github.com/dryrb/dry-validation
-  revision: 727c1fb5448c47c0fa7490559269dbd21fe6b1c5
-  specs:
-    dry-validation (0.2.0)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2, >= 0.2.6)
-      dry-data (~> 0.2, >= 0.2.1)
-      dry-equalizer (~> 0.2)
-
-GIT
   remote: https://github.com/solnic/rodakase
   revision: 65f733856c89c45f0bbb1157c3e342d467c5911c
   specs:
@@ -65,9 +46,32 @@ GEM
     dry-container (0.2.7)
       dry-configurable (= 0.1.2)
       thread_safe
+    dry-data (0.5.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.1)
+      inflecto (~> 0.0.0, >= 0.0.2)
+      kleisli (~> 0.2)
+      thread_safe (~> 0.3)
     dry-equalizer (0.2.0)
+    dry-logic (0.1.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-equalizer (~> 0.2)
     dry-pipeline (0.0.1)
+    dry-validation (0.5.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-data (~> 0.5, >= 0.5.0)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.1)
     ffi (1.9.10)
+    formalist (0.1.0)
+      dry-configurable
+      dry-container
+      dry-data (>= 0.4.2)
+      dry-validation
+      inflecto
     formatador (0.2.5)
     guard (2.13.0)
       formatador (>= 0.2.4)
@@ -159,8 +163,9 @@ DEPENDENCIES
   capybara-screenshot
   database_cleaner
   dry-component!
-  dry-data!
-  dry-validation!
+  dry-data
+  dry-validation
+  formalist
   guard-rspec
   inflecto
   pry-byebug

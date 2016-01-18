@@ -9,8 +9,9 @@ gem "dry-component", git: "https://github.com/dryrb/dry-component"
 gem "shotgun"
 
 # Application dependencies
-gem "dry-data", git: "https://github.com/dryrb/dry-data"
-gem "dry-validation", git: "https://github.com/dryrb/dry-validation"
+gem "dry-data"
+gem "dry-validation"
+gem "formalist"
 gem "slim"
 
 group :development, :test do
