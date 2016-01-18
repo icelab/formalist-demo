@@ -1,6 +1,6 @@
 require "formalist_demo/assets"
 
-module Main
+module FormalistDemo
   # This is our main layout context that we inject into view
   #
   # Methods available in this object will be available in the main layout
@@ -14,10 +14,11 @@ module Main
     end
 
     def assets
-      @assets ||= FormalistDemo::Assets.new(
+      @assets ||= Assets.new(
         env: config.env,
         root: config.root,
-        server_url: config.app.assets_server_url)
+        server_url: Container.options.assets_server_url
+      )
     end
   end
 end

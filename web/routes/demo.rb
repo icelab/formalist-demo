@@ -1,6 +1,6 @@
-module Main
+module FormalistDemo
   class Application < Rodakase::Application
-    route "example" do |r|
+    route "demo" do |r|
       # Routes go here
     end
   end
