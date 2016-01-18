@@ -1,0 +1,7 @@
+development: &base
+  SESSION_SECRET: xxx
+  DATABASE_URL: 'postgres://localhost/formalist_demo_development'
+  ASSETS_SERVER_URL: "http://localhost:1234"
+test:
+  <<: *base
+  DATABASE_URL: 'postgres://localhost/formalist_demo_test'

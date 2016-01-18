@@ -1,0 +1,249 @@
+GIT
+  remote: https://github.com/dryrb/dry-data
+  revision: f19956a24b47b31fac4c53a7e320e5472224a251
+  specs:
+    dry-data (0.2.1)
+      dry-container (~> 0.2)
+      inflecto (~> 0.0.0, >= 0.0.2)
+      kleisli (~> 0.2)
+
+GIT
+  remote: https://github.com/dryrb/dry-validation
+  revision: 727c1fb5448c47c0fa7490559269dbd21fe6b1c5
+  specs:
+    dry-validation (0.2.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2, >= 0.2.6)
+      dry-data (~> 0.2, >= 0.2.1)
+      dry-equalizer (~> 0.2)
+
+GIT
+  remote: https://github.com/icelab/call_sheet
+  revision: face0888b385af571d50a9bf8aa2f25be4be2c6a
+  specs:
+    call_sheet (0.3.2)
+      kleisli
+      wisper (>= 1.6.0)
+
+GIT
+  remote: https://github.com/rom-rb/rom
+  revision: 82a438f8427991af38ec9e9e516ff627068969cc
+  specs:
+    rom (1.0.0.beta1)
+      equalizer (~> 0.0, >= 0.0.9)
+      rom-mapper (~> 0.3.0.beta1)
+      rom-support (~> 1.0.0.beta1)
+
+GIT
+  remote: https://github.com/rom-rb/rom-mapper
+  revision: e07b7f5a89f0b57fcfe076f45ed729dec9e626ff
+  specs:
+    rom-mapper (0.3.0.beta1)
+      equalizer (~> 0.0, >= 0.0.10)
+      rom-support (~> 1.0.0.beta1)
+
+GIT
+  remote: https://github.com/rom-rb/rom-repository
+  revision: 306bcc46dbd07e1332bc7236372f81bab3f1dfa5
+  specs:
+    rom-repository (0.2.0.beta1)
+      anima (~> 0.2, >= 0.2)
+      rom (~> 1.0.0.beta1)
+      rom-mapper (~> 0.3.beta1)
+      rom-support (~> 1.0.0.beta1)
+
+GIT
+  remote: https://github.com/rom-rb/rom-sql
+  revision: 0a17586961eb2d02d74e4b34d31f64ce3bf99d66
+  specs:
+    rom-sql (0.7.0.beta1)
+      equalizer (~> 0.0, >= 0.0.9)
+      rom (~> 1.0.0.beta1)
+      sequel (~> 4.18)
+
+GIT
+  remote: https://github.com/rom-rb/rom-support
+  revision: c0bdb013b1c4546038db4bec501303bf16eb42ad
+  specs:
+    rom-support (1.0.0.beta1)
+      transproc (~> 0.4.0)
+      wisper (~> 1.6, >= 1.6.0)
+
+GIT
+  remote: https://github.com/solnic/transproc
+  revision: dcd3f83bda5607ebb6ddf1f5dfe648ac0cfb2f86
+  specs:
+    transproc (0.4.0)
+
+GIT
+  remote: https://github.com/timriley/rodakase
+  revision: db6f6ad46df83f38d9489906ef71ab45858e326e
+  branch: null-view-parts
+  specs:
+    rodakase (0.0.1)
+      dry-auto_inject (~> 0.1)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
+      inflecto (~> 0)
+      roda (~> 2.7)
+      tilt (~> 2.0)
+      transflow (~> 0.3)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    abstract_type (0.0.7)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
+    addressable (2.3.8)
+    anima (0.3.0)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.2)
+      equalizer (~> 0.0.11)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
+    capybara (2.5.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
+    capybara-screenshot (1.0.11)
+      capybara (>= 1.0, < 3)
+      launchy
+    coderay (1.1.0)
+    columnize (0.9.0)
+    database_cleaner (1.5.1)
+    diff-lcs (1.2.5)
+    dry-auto_inject (0.1.0)
+    dry-configurable (0.1.2)
+      thread_safe
+    dry-container (0.2.6)
+      dry-configurable (= 0.1.2)
+      thread_safe
+    dry-equalizer (0.2.0)
+    dry-pipeline (0.0.1)
+    either_result_matcher (0.1.0)
+      kleisli
+    equalizer (0.0.11)
+    ffi (1.9.10)
+    formatador (0.2.5)
+    guard (2.13.0)
+      formatador (>= 0.2.4)
+      listen (>= 2.7, <= 4.0)
+      lumberjack (~> 1.0)
+      nenv (~> 0.1)
+      notiffany (~> 0.0)
+      pry (>= 0.9.12)
+      shellany (~> 0.0)
+      thor (>= 0.18.1)
+    guard-compat (1.2.1)
+    guard-rspec (4.6.4)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
+    ice_nine (0.11.1)
+    inflecto (0.0.2)
+    kleisli (0.2.6)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    listen (3.0.3)
+      rb-fsevent (>= 0.9.3)
+      rb-inotify (>= 0.9)
+    lumberjack (1.0.9)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
+    method_source (0.8.2)
+    mime-types (2.6.2)
+    mini_portile (0.6.2)
+    nenv (0.2.0)
+    nokogiri (1.6.6.2)
+      mini_portile (~> 0.6.0)
+    notiffany (0.0.8)
+      nenv (~> 0.1)
+      shellany (~> 0.0)
+    pg (0.18.3)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-byebug (3.2.0)
+      byebug (~> 5.0)
+      pry (~> 0.10)
+    puma (2.14.0)
+    rack (1.6.4)
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rb-fsevent (0.9.6)
+    rb-inotify (0.9.5)
+      ffi (>= 0.5.0)
+    roda (2.8.0)
+      rack
+    rspec (3.3.0)
+      rspec-core (~> 3.3.0)
+      rspec-expectations (~> 3.3.0)
+      rspec-mocks (~> 3.3.0)
+    rspec-core (3.3.2)
+      rspec-support (~> 3.3.0)
+    rspec-expectations (3.3.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-mocks (3.3.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.3.0)
+    rspec-support (3.3.0)
+    sequel (4.28.0)
+    shellany (0.0.1)
+    shotgun (0.9.1)
+      rack (>= 1.0)
+    site_prism (2.8)
+      addressable (>= 2.3.3, < 3.0)
+      capybara (>= 2.1, < 3.0)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
+    slop (3.6.0)
+    temple (0.7.6)
+    thor (0.19.1)
+    thread_safe (0.3.5)
+    tilt (2.0.1)
+    transflow (0.3.0)
+      dry-pipeline
+      kleisli
+      wisper
+    wisper (1.6.1)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  call_sheet!
+  capybara
+  capybara-screenshot
+  database_cleaner
+  dry-data!
+  dry-validation!
+  either_result_matcher
+  guard-rspec
+  inflecto
+  pg
+  pry-byebug
+  puma
+  rodakase!
+  rom!
+  rom-mapper!
+  rom-repository!
+  rom-sql!
+  rom-support!
+  rspec
+  shotgun
+  site_prism
+  slim
+  transproc!
+
+BUNDLED WITH
+   1.10.6
