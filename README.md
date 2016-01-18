@@ -1,15 +1,4 @@
-# Rodakase Skeleton
-
-## Installation
-
-You can clone this skeleton using a (temporary) fork of [Raygun](https://github.com/carbonfive/raygun) (that properly renames directories):
-
-```
-gem install rraygun
-rraygun -p icelab/rodakase-skeleton your-app-name
-```
-
-## Development
+# Formalist Demo
 
 ### First-time setup
 
