@@ -1,0 +1,5 @@
+development: &base
+  SESSION_SECRET: xxx
+  ASSETS_SERVER_URL: "http://localhost:1234"
+test:
+  <<: *base
