@@ -14,7 +14,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 var autoprefixer = require("autoprefixer-core");
 var cssimport = require("postcss-import");
-var cssnext = require("cssnext");
+var cssnext = require("postcss-cssnext");
 
 /**
  * General configuration
@@ -115,15 +115,12 @@ module.exports = {
 
   // General configuration
   module: {
-    preLoaders: [
-      // Run all JavaScript through jshint before loading
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "jshint-loader"
-      }
-    ],
     loaders: [
+      {
+        test: /\.js/,
+        loader: "babel?presets[]=react,presets[]=es2015",
+        include: TARGETS
+      },
       {
         test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)/,
         loader: "file-loader?name=[path][name].[ext]"
@@ -133,10 +130,16 @@ module.exports = {
         loader: "html-loader"
       },
       {
+        test: /\.mcss$/,
+        // The ExtractTextPlugin pulls all CSS out into static files
+        // rather than inside the JavaScript/webpack bundle
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
+      },
+      {
         test: /\.css$/,
         // The ExtractTextPlugin pulls all CSS out into static files
         // rather than inside the JavaScript/webpack bundle
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!postcss-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
       }
     ]
   }
