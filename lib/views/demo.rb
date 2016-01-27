@@ -4,14 +4,16 @@ require "formalist_demo/view"
 
 module Views
   class Demo < FormalistDemo::View
-    include FormalistDemo::Import("forms.demo")
+    include FormalistDemo::Import("forms.demo_form")
 
     configure do |config|
       config.template = "demo"
     end
 
     def locals(options = {})
-      {ast: demo.().to_ary.to_json}
+      form = options.fetch(:form) { demo_form.() }
+
+      {ast: form.to_ary.to_json}
     end
   end
 end

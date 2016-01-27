@@ -11,10 +11,13 @@ gem "shotgun"
 # Application dependencies
 gem "dry-data"
 gem "dry-validation"
-gem "formalist"
+gem "either_result_matcher"
+gem "formalist", git: "https://github.com/icelab/formalist"
+gem "kleisli"
 gem "slim"
 
 group :development, :test do
+  gem "byebug"
   gem "guard-rspec", require: false
   gem "pry-byebug"
 end

@@ -1,3 +1,5 @@
+require "either_result_matcher/either_extensions"
+
 require "rodakase/application"
 require_relative "container"
 
