@@ -113,6 +113,16 @@ module.exports = {
     };
   },
 
+  // Set the resolve paths to _our_ node_modules
+  // For modules
+  resolve: {
+    fallback: [path.join(__dirname, '../node_modules')]
+  },
+  // Same issue, for loaders like babel
+  resolveLoader: {
+    fallback: [path.join(__dirname, '../node_modules')]
+  },
+
   // General configuration
   module: {
     loaders: [
