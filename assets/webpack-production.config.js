@@ -15,6 +15,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var autoprefixer = require("autoprefixer-core");
 var cssimport = require("postcss-import");
 var cssnext = require("postcss-cssnext");
+var modulesValues = require("postcss-modules-values");
+var atImport = require("postcss-import");
 
 /**
  * General configuration
@@ -107,7 +109,9 @@ module.exports = {
           }.bind(this)
         }),
         cssnext(),
-        autoprefixer
+        autoprefixer,
+        modulesValues,
+        atImport()
       ],
       cleaner:  [autoprefixer({ browsers: ["last 2 versions"] })]
     };
@@ -116,6 +120,9 @@ module.exports = {
   // Set the resolve paths to _our_ node_modules
   // For modules
   resolve: {
+    alias: {
+      "formalist-theme": path.join(__dirname, '../node_modules/formalist-standard-react/lib/components/ui')
+    },
     fallback: [path.join(__dirname, '../node_modules')]
   },
   // Same issue, for loaders like babel
