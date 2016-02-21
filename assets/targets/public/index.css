@@ -50,15 +50,18 @@ table {
 /* Base */
 
 html {
-  font-size: 67.5%;
+  font-size: 62.5%;
 }
 
 body {
   font-size: 1.6rem;
-  background-image: url('./formalist.png');
-  background-repeat: no-repeat;
-  background-position: top right;
-  padding: 5rem 25rem 5rem 5rem;
+  padding: 5rem;
+}
+
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80rem;
 }
 
 pre {
