@@ -5,6 +5,9 @@ import ReactDOM from 'react-dom'
 import Immutable from 'immutable'
 import template from 'formalist-standard-react'
 
+import Perf from 'react-addons-perf'
+window.Perf = Perf
+
 /**
  * Simple wrapper to create the form outer
  */
@@ -20,8 +23,17 @@ export default class App extends Component {
   componentWillMount() {
     let form = this.props.form
     form.store.subscribe(() => {
+      Perf.start()
       this.setState({
         formState: form.store.getState()
+      }, () => {
+        setTimeout(() => {
+          Perf.stop()
+          Perf.printInclusive()
+          Perf.printExclusive()
+          Perf.printWasted()
+          Perf.printDOM()
+        }, 1000)
       })
     })
   }
@@ -49,7 +61,13 @@ const views = {
     let data = JSON.parse(ast)
     let configuredTemplate = template()
     let form = configuredTemplate(data)
-    ReactDOM.render(<App form={form} />, el);
+    Perf.start()
+    ReactDOM.render(<App form={form} />, el)
+    Perf.stop()
+    Perf.printInclusive()
+    Perf.printExclusive()
+    Perf.printWasted()
+    Perf.printDOM()
   }
 }
 
