@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/icelab/formalist
-  revision: 983f7a6caac98ec24d9a6313e2195e660752de25
+  revision: 4bf2bbdaa72bac6fdb834fae9807d6ba6133b528
   specs:
     formalist (0.1.0)
       dry-configurable
@@ -66,7 +66,7 @@ GEM
       kleisli (~> 0.2)
       thread_safe (~> 0.3)
     dry-equalizer (0.2.0)
-    dry-logic (0.1.2)
+    dry-logic (0.1.4)
       dry-container (~> 0.2, >= 0.2.6)
       dry-equalizer (~> 0.2)
     dry-pipeline (0.0.1)
