@@ -1,19 +1,17 @@
 require "json"
-require "formalist_demo/import"
 require "formalist_demo/view"
+require "forms/demo_form"
 
 module Views
   class Demo < FormalistDemo::View
-    include FormalistDemo::Import("forms.demo_form")
-
     configure do |config|
       config.template = "demo"
     end
 
     def locals(options = {})
-      form = options.fetch(:form) { demo_form.() }
+      form = options.fetch(:form) { Forms::DemoForm.build }
 
-      {ast: form.to_ary.to_json}
+      {ast: form.to_ast.to_json}
     end
   end
 end

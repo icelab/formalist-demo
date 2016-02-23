@@ -10,17 +10,14 @@ module FormalistDemo
 
       r.post do
         r.resolve "operations.submit_demo" do |submit_demo|
-          # TODO: Make this nicer
-          input = Formalist::OutputCompiler.new.call(JSON.parse(r[:data]))
-
-          submit_demo.(input).match do |m|
+          submit_demo.(r[:data]).match do |m|
             m.success do
               r.redirect "/demo"
             end
 
-            m.failure do |error_form|
+            m.failure do |form|
               r.resolve "views.demo" do |view|
-                view.(form: error_form)
+                view.(form: form)
               end
             end
           end

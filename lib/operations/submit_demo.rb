@@ -1,22 +1,11 @@
 require "kleisli"
-require "formalist_demo/import"
+require "forms/demo_form"
 
 module Operations
   class SubmitDemo
-    include FormalistDemo::Import("forms.demo_form", "validation.demo_schema")
-
     def call(input)
-      validation = demo_schema.call(input)
-
-      if validation.messages.any?
-        Left(demo_form.call(
-          validation.params,
-          rules: demo_schema.rules.map(&:to_ary),
-          errors: validation.messages
-        ))
-      else
-        Right(validation.params)
-      end
+      result = Forms::DemoForm.receive(input).validate
+      result.success? ? Right(result) : Left(result)
     end
   end
 end
