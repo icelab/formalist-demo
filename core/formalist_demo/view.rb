@@ -12,10 +12,5 @@ module FormalistDemo
     setting :scope, Container[:page]
     setting :engine, :slim
     setting :name, "application"
-
-    def locals(options= {})
-      # Temporary workaround for a rodakase bug, which fails to render if this hash is empty
-      {foo: "bar"}
-    end
   end
 end
