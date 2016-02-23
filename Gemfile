@@ -12,7 +12,7 @@ gem "shotgun"
 gem "dry-data"
 gem "dry-validation", git: "https://github.com/dryrb/dry-validation", ref: "6447302f3b53766b29f29230831890a5cc3822e0"
 gem "either_result_matcher"
-gem "formalist", "~> 0.2.1"
+gem "formalist", "~> 0.2.2"
 gem "kleisli"
 gem "slim"
 

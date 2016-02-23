@@ -3,12 +3,12 @@ require "validation/demo_schema"
 
 module Forms
   DemoForm = Class.new(Formalist::Form) do
-    # section :date do |section|
-    #   section.field :date_default, type: "date", label: "Date (default)"
-    # end
-    # section :datetime do |section|
-    #   section.field :datetime_default, type: "date_time", label: "Date-time (default)"
-    # end
+    section :date do |section|
+      section.field :date_default, type: "date", label: "Date (default)"
+    end
+    section :datetime do |section|
+      section.field :datetime_default, type: "date_time", label: "Date-time (default)"
+    end
     section :string do |section|
       section.field :string_default,  type: "string", label: "String (default)",  placeholder: "Default string type"
       section.field :string_password, type: "string", label: "String (password)", placeholder: "Secret squirrel", password: true, inline: true

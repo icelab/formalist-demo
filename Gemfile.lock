@@ -74,10 +74,9 @@ GEM
     either_result_matcher (0.1.0)
       kleisli
     ffi (1.9.10)
-    formalist (0.2.1)
+    formalist (0.2.2)
       dry-configurable
       dry-container
-      dry-data (>= 0.4.2)
       dry-validation (~> 0.6.0)
       inflecto
     formatador (0.2.5)
@@ -175,7 +174,7 @@ DEPENDENCIES
   dry-data
   dry-validation!
   either_result_matcher
-  formalist (~> 0.2.1)
+  formalist (~> 0.2.2)
   guard-rspec
   inflecto
   kleisli

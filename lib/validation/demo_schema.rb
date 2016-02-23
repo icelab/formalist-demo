@@ -2,8 +2,8 @@ require "dry-validation"
 
 module Validation
   DemoSchema = Class.new(Dry::Validation::Schema) do
-    # key(:date_default, &:filled?)
-    # key(:datetime_default) { |datetime| datetime.filled? }
+    key(:date_default).required(:date?)
+    key(:datetime_default).required(:date_time?)
     key(:string_default).required
     key(:string_password).required
     key(:string_code).required
