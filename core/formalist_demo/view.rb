@@ -10,7 +10,7 @@ module FormalistDemo
   class View < Rodakase::View::Layout
     setting :root, Container.root.join("web/templates")
     setting :scope, Container[:page]
-    setting :engine, :slim
+    setting :formats, {html: :slim}
     setting :name, "application"
   end
 end
