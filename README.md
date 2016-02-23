@@ -14,3 +14,5 @@ Just the bare-bones steps for now:
 bundle exec shotgun -p 3000 -o 0.0.0.0 config.ru
 npm start
 ```
+
+Then load [http://localhost:3000/demo](http://localhost:3000/demo).
