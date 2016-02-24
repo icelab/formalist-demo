@@ -3,24 +3,28 @@ import viewloader from 'viewloader'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Immutable from 'immutable'
+import composeForm from 'formalist-compose'
 import template from 'formalist-standard-react'
 
 import Perf from 'react-addons-perf'
 window.Perf = Perf
 
+import serialize from 'formalist-serialize-react'
+
 /**
  * Simple wrapper to create the form outer
  */
 export default class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     let form = this.props.form
     this.state = {
-      formState: form.store.getState()
+      formState: form.store.getState(),
+      submitting: false
     }
   }
 
-  componentWillMount() {
+  componentWillMount () {
     let form = this.props.form
     form.store.subscribe(() => {
       Perf.start()
@@ -38,16 +42,32 @@ export default class App extends Component {
     })
   }
 
-  render() {
+  componentDidUpdate (prevProps, prevState) {
+    if (this.state.submitting) {
+      let formNode = ReactDOM.findDOMNode(this.refs.form)
+      formNode.submit()
+    }
+  }
+
+  onSubmit (e) {
+    if (!this.state.submitting) {
+      e.preventDefault()
+      this.setState({
+        submitting: true
+      })
+    }
+  }
+
+  render () {
     let form = this.props.form
+
     return (
       <div className="appWrapper">
-        <form method="post" action="">
+        <form ref="form" method="post" action="" onSubmit={this.onSubmit.bind(this)}>
           {form.render()}
-          <input name="data" type="hidden" value={JSON.stringify(this.state.formState.toJS())}/>
           <button>Submit form</button>
+          {(this.state.submitting) ? composeForm(serialize)(this.state.formState).render() : null}
         </form>
-        <pre><code>{JSON.stringify(this.state.formState.toJS(), null, 2)}</code></pre>
       </div>
     )
   }

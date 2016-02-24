@@ -8,6 +8,7 @@
     "domready": "1.0.8",
     "formalist-compose": "icelab/formalist-compose",
     "formalist-standard-react": "icelab/formalist-standard-react",
+    "formalist-serialize-react": "icelab/formalist-serialize-react",
     "immutable": "3.7.6",
     "react": "0.14.7",
     "react-addons-perf": "0.14.7",
