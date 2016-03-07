@@ -7,7 +7,7 @@
   "dependencies": {
     "domready": "1.0.8",
     "formalist-compose": "icelab/formalist-compose",
-    "formalist-standard-react": "file:../formalist-standard-react",
+    "formalist-standard-react": "icelab/formalist-standard-react",
     "immutable": "3.7.6",
     "react": "0.14.7",
     "react-addons-perf": "0.14.7",
