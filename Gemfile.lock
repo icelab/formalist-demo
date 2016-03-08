@@ -22,8 +22,8 @@ GIT
 
 GIT
   remote: https://github.com/icelab/formalist
-  revision: e3816aaf3c25e1ef4fda45d1ce444441999d43db
-  branch: better
+  revision: d9cd81d3b82463e41193729ce20afd74fa6bb7f8
+  branch: master
   specs:
     formalist (0.2.2)
       dry-configurable
