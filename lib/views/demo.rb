@@ -9,7 +9,7 @@ module Views
     end
 
     def locals(options = {})
-      form = options.fetch(:form) { Forms::DemoForm.build }
+      form = Forms::DemoForm.build(options[:result])
 
       {ast: form.to_ast.to_json}
     end

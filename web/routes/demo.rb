@@ -1,4 +1,3 @@
-require "formalist/output_compiler"
 require "json"
 
 module FormalistDemo
@@ -15,9 +14,9 @@ module FormalistDemo
               r.redirect "/demo"
             end
 
-            m.failure do |form|
+            m.failure do |result|
               r.resolve "views.demo" do |view|
-                view.(form: form)
+                view.(result: result)
               end
             end
           end
