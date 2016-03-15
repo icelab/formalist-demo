@@ -116,5 +116,5 @@ module Forms
           question_text: "Do you like me?"
       end
     end
-  end.new(schema: Validation::DemoSchema)
+  end.new
 end
