@@ -16,12 +16,14 @@ module Forms
       section :string do
         text_field :string_default,
           label: "String (default)",
-          placeholder: "Default string type"
+          placeholder: "Default string type",
+          validation: {filled?: true}
 
         text_field :string_password,
           label: "String (password)",
           placeholder: "Secret squirrel",
-          password: true
+          password: true,
+          validation: {filled?: true, min_size?: 5}
 
         text_field :string_code,
           label: "String (default) with code",
