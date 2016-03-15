@@ -9,27 +9,40 @@ GIT
       inflecto (>= 0.0.2)
 
 GIT
-  remote: https://github.com/dryrb/dry-validation
-  revision: 6447302f3b53766b29f29230831890a5cc3822e0
-  ref: 6447302f3b53766b29f29230831890a5cc3822e0
+  remote: https://github.com/dryrb/dry-types
+  revision: b4e2b73a1cca5dc67a0df8b46f2d820903247818
+  branch: master
   specs:
-    dry-validation (0.6.0)
+    dry-types (0.6.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.2)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.2, >= 0.2.0)
+      inflecto (~> 0.0.0, >= 0.0.2)
+      kleisli (~> 0.2)
+      thread_safe (~> 0.3)
+
+GIT
+  remote: https://github.com/dryrb/dry-validation
+  revision: d8c08e71f8ef22184dc55b68346dc54b923a1daf
+  branch: master
+  specs:
+    dry-validation (0.7.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       dry-container (~> 0.2, >= 0.2.8)
-      dry-data (~> 0.5, >= 0.5.0)
       dry-equalizer (~> 0.2)
-      dry-logic (~> 0.1, >= 0.1.4)
+      dry-logic (~> 0.2, >= 0.2.0)
+      dry-types (~> 0.6, >= 0.6.0)
 
 GIT
   remote: https://github.com/icelab/formalist
-  revision: ee98d490f27acd84ade255d0898d9ee376919629
+  revision: abfa12023b7f68293d21335067402dba01a45422
   branch: master
   specs:
     formalist (0.2.2)
       dry-configurable
       dry-container
-      dry-data
-      dry-validation (~> 0.6.0)
+      dry-types
       inflecto
 
 GIT
@@ -70,16 +83,8 @@ GEM
     dry-container (0.3.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       thread_safe
-    dry-data (0.5.1)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2)
-      dry-equalizer (~> 0.2)
-      dry-logic (~> 0.1)
-      inflecto (~> 0.0.0, >= 0.0.2)
-      kleisli (~> 0.2)
-      thread_safe (~> 0.3)
     dry-equalizer (0.2.0)
-    dry-logic (0.1.4)
+    dry-logic (0.2.0)
       dry-container (~> 0.2, >= 0.2.6)
       dry-equalizer (~> 0.2)
     dry-pipeline (0.0.2)
@@ -178,7 +183,7 @@ DEPENDENCIES
   capybara-screenshot
   database_cleaner
   dry-component!
-  dry-data
+  dry-types!
   dry-validation!
   either_result_matcher
   formalist!

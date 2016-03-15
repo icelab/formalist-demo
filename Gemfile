@@ -9,8 +9,8 @@ gem "dry-component", git: "https://github.com/dryrb/dry-component"
 gem "shotgun"
 
 # Application dependencies
-gem "dry-data"
-gem "dry-validation", git: "https://github.com/dryrb/dry-validation", ref: "6447302f3b53766b29f29230831890a5cc3822e0"
+gem "dry-types", git: "https://github.com/dryrb/dry-types", branch: "master"
+gem "dry-validation", git: "https://github.com/dryrb/dry-validation", branch: "master"
 gem "either_result_matcher"
 gem "formalist", git: "https://github.com/icelab/formalist", branch: "master"
 gem "kleisli"
