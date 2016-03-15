@@ -9,7 +9,11 @@ module Views
     end
 
     def locals(options = {})
-      form = Forms::DemoForm.build(options[:result])
+      result = options[:result]
+      input = result ? result.output : {}
+      errors = result ? result.messages : {}
+
+      form = Forms::DemoForm.build(input, errors)
 
       {ast: form.to_ast.to_json}
     end
