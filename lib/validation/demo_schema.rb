@@ -1,7 +1,7 @@
 require "dry-validation"
 
 module Validation
-  DemoSchema = Class.new(Dry::Validation::Schema) do
+  DemoSchema = Dry::Validation.Form do
     key(:date_default).required(:date?)
     key(:datetime_default).required(:date_time?)
     key(:string_default).required
@@ -30,5 +30,5 @@ module Validation
     key(:decimal_select).required
     key(:decimal_radio).required
     key(:bool_default).required(:bool?)
-  end.new
+  end
 end
