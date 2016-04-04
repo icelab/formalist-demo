@@ -8,3 +8,6 @@
 # Node
 /node_modules
 /npm-debug.log
+
+# App secrets
+/config/application.yml

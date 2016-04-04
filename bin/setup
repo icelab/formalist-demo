@@ -8,5 +8,8 @@ Dir.chdir(APP_ROOT) do
   puts "== Installing dependencies =="
   system "bundle"
   system "npm install"
+
+  puts "== Copying app configuration into place =="
+  system "cp config/application.example.yml config/application.yml"
 end
 
