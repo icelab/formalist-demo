@@ -5,6 +5,8 @@ require_relative "container"
 
 module FormalistDemo
   class Application < Rodakase::Application
+    plugin :json
+
     configure do |config|
       config.routes = "web/routes".freeze
       config.container = Container
