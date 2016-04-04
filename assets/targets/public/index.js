@@ -3,7 +3,9 @@ import viewloader from 'viewloader'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Immutable from 'immutable'
+import composeForm from 'formalist-compose'
 import template from 'formalist-standard-react'
+import serialize from 'formalist-serialize-react'
 
 import Perf from 'react-addons-perf'
 window.Perf = Perf
@@ -40,16 +42,38 @@ export default class App extends Component {
 
   render() {
     let form = this.props.form
+    let serializedForm = composeForm(serialize())
     return (
       <div className="appWrapper">
         <form method="post" action="">
           {form.render()}
-          <input name="data" type="hidden" value={JSON.stringify(this.state.formState.toJS())}/>
           <button>Submit form</button>
+          {serializedForm(this.state.formState.toJS()).render()}
         </form>
-        <pre><code>{JSON.stringify(this.state.formState.toJS(), null, 2)}</code></pre>
       </div>
     )
+  }
+}
+
+
+const formConfig = {
+  fields: {
+    selectionField: {
+      components: [
+        {
+          name: 'author',
+          component: ({option}) => (<div><strong>{option.label}</strong>, {option.description}</div>)
+        }
+      ]
+    },
+    multiSelectionField: {
+      components: [
+        {
+          name: 'author',
+          component: ({option}) => (<div><strong>{option.label}</strong>, {option.description}</div>)
+        }
+      ]
+    }
   }
 }
 
@@ -57,10 +81,10 @@ export default class App extends Component {
  * Object for holding our `viewloader` views
  */
 const views = {
-  form: (el, ast) => {
-    let data = JSON.parse(ast)
-    let configuredTemplate = template()
-    let form = configuredTemplate(data)
+  form: (el, props) => {
+    let configuredTemplate = template({}, formConfig)
+    let form = configuredTemplate(props.ast)
+
     Perf.start()
     ReactDOM.render(<App form={form} />, el)
     Perf.stop()

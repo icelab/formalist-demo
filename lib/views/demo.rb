@@ -16,6 +16,7 @@ module Views
       form = Forms::DemoForm.build(input, errors)
 
       {ast: form.to_ast.to_json}
+      {ast: form}
     end
   end
 end
