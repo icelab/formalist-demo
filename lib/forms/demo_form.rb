@@ -8,14 +8,24 @@ module Forms
       text_field :text_field,
         label: "Text field",
         placeholder: "Text field placeholder",
-        hint: "Text field hint"
+        hint: "Text field hint",
+        validation: {
+          filled: true,
+          format: "/leftpad/"
+        }
 
       number_field :number_field,
         label: "Number field",
         placeholder: "Number field placeholder",
         step: 0.5,
         min: 10,
-        max: 20
+        max: 20,
+        validation: {
+          filled: true,
+          num: true,
+          gteq: 10,
+          lteq: 20
+        }
 
       check_box :check_box,
         label: "Checkbox",
@@ -39,6 +49,33 @@ module Forms
       date_time_field :date_time_field,
         label: "Date-time field"
 
+      selection_field :selection_field,
+        label: "Selection field",
+        options: [{
+          id: 1,
+          label: "Option 1"
+        }, {
+          id: 2,
+          label: "Option 2"
+        }]
+
+      multi_selection_field :multi_selection_field,
+        label: "Multi selection field",
+        options: [{
+          id: 1,
+          label: "Option 1"
+        }, {
+          id: 2,
+          label: "Option 2"
+        }, {
+          id: 3,
+          label: "Option 3"
+        }],
+        validation: {
+          min_size: 1,
+          max_size: 2,
+        }
+
       section :section, label: "Section label" do
         text_field :section_text_field,
           label: "Section text field"
@@ -48,7 +85,10 @@ module Forms
 
       group :group, label: "Group label" do
         text_field :group_text_field,
-          label: "Group text field"
+          label: "Group text field",
+          validation: {
+            filled: true
+          }
         number_field :group_number_field,
           label: "Group number field"
       end
