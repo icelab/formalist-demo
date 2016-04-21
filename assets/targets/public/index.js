@@ -10,6 +10,7 @@ import serialize from 'formalist-serialize-react'
 import Perf from 'react-addons-perf'
 window.Perf = Perf
 
+const showPerf = false
 /**
  * Simple wrapper to create the form outer
  */
@@ -30,11 +31,13 @@ export default class App extends Component {
         formState: form.store.getState()
       }, () => {
         setTimeout(() => {
-          Perf.stop()
-          Perf.printInclusive()
-          Perf.printExclusive()
-          Perf.printWasted()
-          Perf.printDOM()
+          if (showPerf) {
+            Perf.stop()
+            Perf.printInclusive()
+            Perf.printExclusive()
+            Perf.printWasted()
+            Perf.printOperations()
+          }
         }, 1000)
       })
     })
@@ -88,10 +91,13 @@ const views = {
     Perf.start()
     ReactDOM.render(<App form={form} />, el)
     Perf.stop()
-    Perf.printInclusive()
-    Perf.printExclusive()
-    Perf.printWasted()
-    Perf.printDOM()
+    if (showPerf) {
+      Perf.stop()
+      Perf.printInclusive()
+      Perf.printExclusive()
+      Perf.printWasted()
+      Perf.printOperations()
+    }
   }
 }
 
