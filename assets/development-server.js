@@ -102,9 +102,8 @@ app.get("*", function(req, res, next) {
         target: proxyTarget
       });
       return;
-    }
-    else {
-      throw e;
+    } else {
+      console.log("Failed to serve: " + req.url)
     }
   }
 });
