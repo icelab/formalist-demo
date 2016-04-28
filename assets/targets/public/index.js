@@ -11,6 +11,9 @@ import Perf from 'react-addons-perf'
 window.Perf = Perf
 
 const showPerf = false
+const showDebug = true
+const showSerialize = true
+
 /**
  * Simple wrapper to create the form outer
  */
@@ -51,8 +54,15 @@ export default class App extends Component {
         <form method="post" action="">
           {form.render()}
           <button>Submit form</button>
-          {serializedForm(this.state.formState.toJS()).render()}
+          {(showSerialize)
+            ? serializedForm(this.state.formState.toJS()).render()
+            : null
+          }
         </form>
+        {(showDebug)
+          ? <pre>{JSON.stringify(this.state.formState.toJS(), null, 2)}</pre>
+          : null
+        }
       </div>
     )
   }
