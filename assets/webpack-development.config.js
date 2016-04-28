@@ -13,7 +13,6 @@ var WebpackNotifierPlugin = require("webpack-notifier");
  * PostCSS packages
  */
 
-var autoprefixer = require("autoprefixer");
 var cssimport = require("postcss-import");
 var cssnext = require("postcss-cssnext");
 var modulesValues = require("postcss-modules-values");
@@ -135,11 +134,9 @@ module.exports = {
           }.bind(this)
         }),
         cssnext(),
-        autoprefixer,
         modulesValues,
         atImport()
-      ],
-      cleaner:  [autoprefixer({ browsers: ["last 2 versions"] })]
+      ]
     };
   },
 
