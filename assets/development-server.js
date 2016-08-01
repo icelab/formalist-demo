@@ -130,7 +130,7 @@ var devServerOptions = {
   contentBase: BUILD,
   hot: true,
   quiet: false,
-  noInfo: true,
+  noInfo: false,
   publicPath: "/assets/",
   historyApiFallback: true,
   stats: {
@@ -142,7 +142,7 @@ var devServerOptions = {
     chunks:       false,
     chunksSort:   false,
     colors:       true,
-    errorDetails: false,
+    errorDetails: true,
     hash:         false,
     modules:      false,
     modulesSort:  false,

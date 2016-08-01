@@ -72,9 +72,16 @@ body {
   max-width: 80rem;
 }
 
-pre {
+.pre {
   margin-top: 4rem;
   font-family: monospace;
   color: #666;
   font-size: 1.2rem;
+}
+
+.submitButton {
+  font-family: "Work Sans";
+  border-radius: 3px;
+  background-color: #ddd;
+  padding: 1rem;
 }

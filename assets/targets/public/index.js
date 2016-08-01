@@ -3,9 +3,9 @@ import viewloader from 'viewloader'
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Immutable from 'immutable'
-import composeForm from 'formalist-compose'
 import template from 'formalist-standard-react'
 import serialize from 'formalist-serialize-react'
+import debounce from 'lodash.debounce'
 
 import Perf from 'react-addons-perf'
 window.Perf = Perf
@@ -28,39 +28,42 @@ export default class App extends Component {
 
   componentWillMount() {
     let form = this.props.form
-    form.store.subscribe(() => {
-      Perf.start()
-      this.setState({
-        formState: form.store.getState()
-      }, () => {
-        setTimeout(() => {
-          if (showPerf) {
-            Perf.stop()
-            Perf.printInclusive()
-            Perf.printExclusive()
-            Perf.printWasted()
-            Perf.printOperations()
-          }
-        }, 1000)
-      })
-    })
+    form.store.subscribe(
+      debounce(() => {
+        if (showPerf) {
+          Perf.start()
+        }
+        this.setState({
+          formState: form.store.getState()
+        }, () => {
+          setTimeout(() => {
+            if (showPerf) {
+              Perf.stop()
+              Perf.printInclusive()
+              Perf.printExclusive()
+              Perf.printWasted()
+              Perf.printOperations()
+            }
+          }, 1000)
+        })
+      }, 250)
+    )
   }
 
   render() {
     let form = this.props.form
-    let serializedForm = composeForm(serialize())
     return (
       <div className="appWrapper">
         <form method="post" action="">
           {form.render()}
-          <button>Submit form</button>
+          <button className="submitButton">Submit form</button>
           {(showSerialize)
-            ? serializedForm(this.state.formState.toJS()).render()
+            ? serialize(this.state.formState.toJS())
             : null
           }
         </form>
         {(showDebug)
-          ? <pre>{JSON.stringify(this.state.formState.toJS(), null, 2)}</pre>
+          ? <pre className="pre">{JSON.stringify(this.state.formState.toJS(), null, 2)}</pre>
           : null
         }
       </div>
@@ -98,9 +101,10 @@ const views = {
     let configuredTemplate = template({}, formConfig)
     let form = configuredTemplate(props.ast)
 
-    Perf.start()
+    if (showPerf) {
+      Perf.start()
+    }
     ReactDOM.render(<App form={form} />, el)
-    Perf.stop()
     if (showPerf) {
       Perf.stop()
       Perf.printInclusive()
