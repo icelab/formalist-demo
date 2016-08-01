@@ -137,6 +137,7 @@ var devServerOptions = {
     assets:       false,
     assetsSort:   false,
     cached:       false,
+    children:     false,
     chunkModules: false,
     chunkOrigins: false,
     chunks:       false,
