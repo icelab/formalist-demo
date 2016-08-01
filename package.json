@@ -11,7 +11,7 @@
     "formalist-serialize-react": "icelab/formalist-serialize-react",
     "formalist-standard-react": "icelab/formalist-standard-react",
     "immutable": "3.7.6",
-    "lodash": "4.10.0",
+    "lodash.debounce": "4.0.7",
     "react": "15.0.0",
     "react-addons-perf": "15.0.0",
     "react-dom": "15.0.0",
