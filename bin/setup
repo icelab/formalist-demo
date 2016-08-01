@@ -3,5 +3,9 @@
 APP_ROOT = File.expand_path("../../",  __FILE__)
 
 Dir.chdir(APP_ROOT) do
-  # Set up your app for development here
+  puts "== Bundling"
+  system "bundle"
+
+  puts "== Copying default settings"
+  system "cp config/settings.example.yml config/settings.yml"
 end
