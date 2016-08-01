@@ -20,7 +20,7 @@ gem "dry-view"
 gem "slim"
 
 # Formalist
-gem "formalist", git: "https://github.com/icelab/formalist", branch: "master"
+gem "formalist", git: "https://github.com/icelab/formalist", branch: "rte"
 
 group :development, :test do
   gem "pry-byebug"

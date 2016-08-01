@@ -4,6 +4,57 @@ require "formalist/elements/standard"
 module Demo
   class Form < Formalist::Form
     define do
+      rich_text_area :content,
+        label: "Rich text area",
+        inline_formatters: [
+          :bold, :underline
+        ],
+        block_formatters: [
+          "unstyled", "header-one", "header-two", "unordered-list-item", "ordered-list-item", "blockquote", "pullquote", "code"
+        ],
+        embeddable_forms: {
+          "image_with_caption": {
+            label: "Image with caption",
+            template: [
+              ["field", ["text_field", "text_field", nil, [],
+                  ["object", [
+                      ["label", ["value", ["Text field"]]],
+                      ["hint", ["value", ["Text field hint"]]],
+                      ["placeholder", ["value", ["Text field placeholder"]]],
+                      ["validation", ["object", [
+                          ["filled", ["value", [true]]]
+                      ]]]
+                  ]]
+              ]],
+            ],
+          },
+          "there_is_two_of_them": {
+            label: "There is two of them",
+            template: [
+              ["field", ["text_field", "text_field", nil, [],
+                  ["object", [
+                      ["label", ["value", ["Text field"]]],
+                      ["hint", ["value", ["Text field hint"]]],
+                      ["placeholder", ["value", ["Text field placeholder"]]],
+                      ["validation", ["object", [
+                          ["filled", ["value", [true]]]
+                      ]]]
+                  ]]
+              ]],
+              ["field", ["text_field_two", "text_field", nil, [],
+                  ["object", [
+                      ["label", ["value", ["Text field two"]]],
+                      ["hint", ["value", ["Text field hint"]]],
+                      ["placeholder", ["value", ["Text field placeholder"]]],
+                      ["validation", ["object", [
+                          ["filled", ["value", [true]]]
+                      ]]]
+                  ]]
+              ]],
+            ],
+          },
+        }
+
       text_field :text_field,
         label: "Text field",
         placeholder: "Text field placeholder",
