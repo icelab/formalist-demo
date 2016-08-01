@@ -1,175 +1,145 @@
 GIT
-  remote: https://github.com/dryrb/dry-component
-  revision: 56f64864637d432679ca3ee0abfebb0fec1a4461
-  specs:
-    dry-component (0.0.2)
-      dry-auto_inject (~> 0.1)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2, >= 0.2.7)
-      inflecto (>= 0.0.2)
-
-GIT
-  remote: https://github.com/dryrb/dry-types
-  revision: b4e2b73a1cca5dc67a0df8b46f2d820903247818
-  branch: master
-  specs:
-    dry-types (0.6.0)
-      dry-configurable (~> 0.1)
-      dry-container (~> 0.2)
-      dry-equalizer (~> 0.2)
-      dry-logic (~> 0.2, >= 0.2.0)
-      inflecto (~> 0.0.0, >= 0.0.2)
-      kleisli (~> 0.2)
-      thread_safe (~> 0.3)
-
-GIT
-  remote: https://github.com/dryrb/dry-validation
-  revision: d8c08e71f8ef22184dc55b68346dc54b923a1daf
-  branch: master
-  specs:
-    dry-validation (0.7.0)
-      dry-configurable (~> 0.1, >= 0.1.3)
-      dry-container (~> 0.2, >= 0.2.8)
-      dry-equalizer (~> 0.2)
-      dry-logic (~> 0.2, >= 0.2.0)
-      dry-types (~> 0.6, >= 0.6.0)
-
-GIT
   remote: https://github.com/icelab/formalist
-  revision: abfa12023b7f68293d21335067402dba01a45422
+  revision: 9558000b08b7425ced388b6e5b586372b5afdbfb
   branch: master
   specs:
-    formalist (0.2.2)
+    formalist (0.3.0)
       dry-configurable
       dry-container
-      dry-types
+      dry-types (>= 0.8)
       inflecto
-
-GIT
-  remote: https://github.com/solnic/rodakase
-  revision: efafb2d3dc8ca5d6c0b676c5823bbda193e41eb5
-  specs:
-    rodakase (0.0.1)
-      dry-component (~> 0)
-      dry-configurable (~> 0.1)
-      dry-equalizer (~> 0.2)
-      inflecto (~> 0)
-      roda (~> 2.7)
-      tilt (~> 2.0)
-      transflow (~> 0.3)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
-    byebug (5.0.0)
-      columnize (= 0.9.0)
-    capybara (2.5.0)
+    addressable (2.4.0)
+    byebug (9.0.5)
+    capybara (2.7.1)
+      addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-screenshot (1.0.11)
+    capybara-screenshot (1.0.13)
       capybara (>= 1.0, < 3)
       launchy
-    coderay (1.1.0)
-    columnize (0.9.0)
-    database_cleaner (1.5.1)
+    cliver (0.3.2)
+    coderay (1.1.1)
+    concurrent-ruby (1.0.2)
+    database_cleaner (1.5.3)
     diff-lcs (1.2.5)
-    dry-auto_inject (0.2.0)
-    dry-configurable (0.1.3)
-      thread_safe
-    dry-container (0.3.0)
+    dry-auto_inject (0.4.0)
+      dry-container (~> 0.3.4)
+    dry-component (0.4.2)
+      dry-auto_inject (>= 0.4.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.3, >= 0.3.4)
+      inflecto (>= 0.0.2)
+    dry-configurable (0.1.7)
+      concurrent-ruby (~> 1.0)
+    dry-container (0.3.4)
+      concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-      thread_safe
     dry-equalizer (0.2.0)
-    dry-logic (0.2.0)
+    dry-logic (0.3.0)
       dry-container (~> 0.2, >= 0.2.6)
       dry-equalizer (~> 0.2)
-    dry-pipeline (0.0.2)
-    either_result_matcher (0.1.0)
-      kleisli
-    ffi (1.9.10)
-    formatador (0.2.5)
-    guard (2.13.0)
-      formatador (>= 0.2.4)
-      listen (>= 2.7, <= 4.0)
-      lumberjack (~> 1.0)
-      nenv (~> 0.1)
-      notiffany (~> 0.0)
-      pry (>= 0.9.12)
-      shellany (~> 0.0)
-      thor (>= 0.18.1)
-    guard-compat (1.2.1)
-    guard-rspec (4.6.4)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
+    dry-matcher (0.5.0)
+    dry-monads (0.0.2)
+    dry-transaction (0.8.0)
+      dry-container (>= 0.2.8)
+      dry-matcher (>= 0.5.0)
+      dry-monads (>= 0.0.1)
+      wisper (>= 1.6.0)
+    dry-types (0.8.1)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1)
+      dry-container (~> 0.3)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.3, >= 0.3.0)
+      dry-monads (>= 0.0.1)
+      ice_nine (~> 0.11)
+      inflecto (~> 0.0.0, >= 0.0.2)
+    dry-validation (0.9.3)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.1, >= 0.1.3)
+      dry-container (~> 0.2, >= 0.2.8)
+      dry-equalizer (~> 0.2)
+      dry-logic (~> 0.3, >= 0.3.0)
+      dry-types (~> 0.8, >= 0.8.1)
+    dry-view (0.1.1)
+      dry-configurable (~> 0.1)
+      dry-equalizer (~> 0.2)
+      inflecto (~> 0)
+      tilt (~> 2.0)
+    dry-web (0.4.1)
+      dry-component (>= 0.4.1)
+    dry-web-roda (0.3.0)
+      dry-configurable (~> 0.1)
+      inflecto (~> 0.0)
+      roda (~> 2.14)
+      roda-flow (~> 0.3)
+      thor (~> 0.19)
+    ice_nine (0.11.2)
     inflecto (0.0.2)
-    kleisli (0.2.7)
     launchy (2.4.3)
       addressable (~> 2.3)
-    listen (3.0.3)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-    lumberjack (1.0.9)
     method_source (0.8.2)
-    mime-types (2.6.2)
-    mini_portile (0.6.2)
-    nenv (0.2.0)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
-    notiffany (0.0.8)
-      nenv (~> 0.1)
-      shellany (~> 0.0)
-    pry (0.10.3)
+    mime-types (3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2016.0521)
+    mini_portile2 (2.1.0)
+    nokogiri (1.6.8)
+      mini_portile2 (~> 2.1.0)
+      pkg-config (~> 1.1.7)
+    pkg-config (1.1.7)
+    poltergeist (1.10.0)
+      capybara (~> 2.1)
+      cliver (~> 0.3.1)
+      websocket-driver (>= 0.2.0)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry-byebug (3.2.0)
-      byebug (~> 5.0)
+    pry-byebug (3.4.0)
+      byebug (~> 9.0)
       pry (~> 0.10)
-    puma (2.14.0)
+    puma (3.6.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rb-fsevent (0.9.6)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
-    roda (2.11.0)
+    rack_csrf (2.5.0)
+      rack (>= 1.1.0)
+    rake (11.2.2)
+    roda (2.16.0)
       rack
-    rspec (3.3.0)
-      rspec-core (~> 3.3.0)
-      rspec-expectations (~> 3.3.0)
-      rspec-mocks (~> 3.3.0)
-    rspec-core (3.3.2)
-      rspec-support (~> 3.3.0)
-    rspec-expectations (3.3.1)
+    roda-flow (0.3.0)
+    rspec (3.5.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+    rspec-core (3.5.2)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.3.0)
-    rspec-mocks (3.3.2)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.3.0)
-    rspec-support (3.3.0)
-    shellany (0.0.1)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     shotgun (0.9.1)
       rack (>= 1.0)
-    site_prism (2.8)
-      addressable (>= 2.3.3, < 3.0)
-      capybara (>= 2.1, < 3.0)
-    slim (3.0.6)
-      temple (~> 0.7.3)
+    slim (3.0.7)
+      temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
     slop (3.6.0)
-    temple (0.7.6)
+    temple (0.7.7)
     thor (0.19.1)
-    thread_safe (0.3.5)
-    tilt (2.0.2)
-    transflow (0.3.0)
-      dry-pipeline
-      kleisli
-      wisper
+    tilt (2.0.5)
+    websocket-driver (0.6.4)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
     wisper (1.6.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
@@ -178,25 +148,27 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   capybara
   capybara-screenshot
   database_cleaner
-  dry-component!
-  dry-types!
-  dry-validation!
-  either_result_matcher
+  dry-matcher
+  dry-monads
+  dry-transaction
+  dry-types
+  dry-validation
+  dry-view
+  dry-web (>= 0.4.0)
+  dry-web-roda (>= 0.3.0)
   formalist!
-  guard-rspec
-  inflecto
-  kleisli
+  poltergeist
   pry-byebug
   puma
-  rodakase!
+  rack (~> 1.6)
+  rack_csrf
+  rake
   rspec
   shotgun
-  site_prism
   slim
 
 BUNDLED WITH
-   1.11.2
+   1.12.3

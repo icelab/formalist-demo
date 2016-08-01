@@ -1,2 +1,2 @@
-require_relative "core/boot"
+require_relative "umbrella/boot"
 run FormalistDemo::Application.freeze.app

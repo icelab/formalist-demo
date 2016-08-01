@@ -1,7 +1,0 @@
-development: &base
-  SESSION_SECRET: xxx
-  ASSETS_SERVER_URL: "http://localhost:1234"
-  ATTACHE_HOST: "attache.icelab.com.au"
-  ATTACHE_SECRET_KEY: "123"
-test:
-  <<: *base

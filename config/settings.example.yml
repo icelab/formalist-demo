@@ -1,0 +1,11 @@
+development: &base
+  database_url: 'postgres://localhost/formalist_demo_development'
+  session_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  assets_server_url: "http://localhost:1234"
+  attache_host:
+  attache_secret_key:
+test:
+  <<: *base
+  database_url: 'postgres://localhost/formalist_demo_test'
+production:
+  <<: *base

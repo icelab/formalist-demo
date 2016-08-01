@@ -1,4 +1,10 @@
-# RSpec artifacts
+# Ignore secrets in app settings (copy a version to settings.example.yml if you want to check one in)
+/config/settings.yml
+
+# Logs
+/log/*.log
+
+# RSpec
 /spec/examples.txt
 
 # Asset artifacts
@@ -8,6 +14,3 @@
 # Node
 /node_modules
 /npm-debug.log
-
-# App secrets
-/config/application.yml

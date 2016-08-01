@@ -1,32 +1,35 @@
 source "https://rubygems.org"
 
-ruby "2.3.0"
+gem "rake"
 
 # Web framework
+gem "rack", "~> 1.6"
+gem "dry-web", ">= 0.4.0"
+gem "dry-web-roda", ">= 0.3.0"
 gem "puma"
-gem "rodakase", git: "https://github.com/solnic/rodakase"
-gem "dry-component", git: "https://github.com/dryrb/dry-component"
+gem "rack_csrf"
 gem "shotgun"
 
 # Application dependencies
-gem "dry-types", git: "https://github.com/dryrb/dry-types", branch: "master"
-gem "dry-validation", git: "https://github.com/dryrb/dry-validation", branch: "master"
-gem "either_result_matcher"
-gem "formalist", git: "https://github.com/icelab/formalist", branch: "master"
-gem "kleisli"
+gem "dry-matcher"
+gem "dry-monads"
+gem "dry-transaction"
+gem "dry-types"
+gem "dry-validation"
+gem "dry-view"
 gem "slim"
 
+# Formalist
+gem "formalist", git: "https://github.com/icelab/formalist", branch: "master"
+
 group :development, :test do
-  gem "byebug"
-  gem "guard-rspec", require: false
   gem "pry-byebug"
 end
 
 group :test do
-  gem "capybara", require: false
-  gem "capybara-screenshot", require: false
+  gem "capybara"
+  gem "capybara-screenshot"
   gem "database_cleaner"
-  gem "inflecto"
+  gem "poltergeist"
   gem "rspec"
-  gem "site_prism"
 end

@@ -1,13 +1,13 @@
-require "byebug"
-
 ENV["RACK_ENV"] = "test"
+
+require "byebug"
 
 SPEC_ROOT = Pathname(__FILE__).dirname
 
 Dir[SPEC_ROOT.join("support/*.rb").to_s].each(&method(:require))
 Dir[SPEC_ROOT.join("shared/*.rb").to_s].each(&method(:require))
 
-require SPEC_ROOT.join("../core/formalist_demo/container")
+require SPEC_ROOT.join("../umbrella/formalist_demo/container")
 
 RSpec.configure do |config|
   config.disable_monkey_patching!
@@ -34,17 +34,12 @@ RSpec.configure do |config|
   # `--only-failures` and `--next-failure` CLI options.
   config.example_status_persistence_file_path = "spec/examples.txt"
 
-  # This setting enables warnings. It's recommended, but in some cases may be
-  # too noisy due to issues in dependencies.
-  # config.warnings = true
-
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
   # individual spec file.
   if config.files_to_run.one?
-    # Use the documentation formatter for detailed output,
-    # unless a formatter has already been configured
-    # (e.g. via a command-line flag).
+    # Use the documentation formatter for detailed output, unless a formatter
+    # has already been configured (e.g. via a command-line flag).
     config.default_formatter = "doc"
   end
 

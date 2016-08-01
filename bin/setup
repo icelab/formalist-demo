@@ -1,15 +1,7 @@
 #!/usr/bin/env ruby
 
-require "fileutils"
-
 APP_ROOT = File.expand_path("../../",  __FILE__)
 
 Dir.chdir(APP_ROOT) do
-  puts "== Installing dependencies =="
-  system "bundle"
-  system "npm install"
-
-  puts "== Copying app configuration into place =="
-  system "cp config/application.example.yml config/application.yml"
+  # Set up your app for development here
 end
-

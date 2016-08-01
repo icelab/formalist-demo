@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
-require "rodakase/cli"
-require_relative "../core/boot"
+require "bundler/setup"
+require "dry/web/console"
+require_relative "../umbrella/boot"
 
-Rodakase::Cli.start
+Dry::Web::Console.start
