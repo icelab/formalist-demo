@@ -19,6 +19,7 @@ module Demo
 
     plugin :view
     plugin :page
+    plugin :json
 
     route do |r|
       r.multi_route
