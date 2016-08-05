@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/icelab/formalist
-  revision: 9558000b08b7425ced388b6e5b586372b5afdbfb
-  branch: master
+  revision: 67e33e29207511a1ab0bd725b755f3775c3c5ce2
+  branch: search-selection-fields
   specs:
     formalist (0.3.0)
       dry-configurable
@@ -171,4 +171,4 @@ DEPENDENCIES
   slim
 
 BUNDLED WITH
-   1.12.3
+   1.12.5
