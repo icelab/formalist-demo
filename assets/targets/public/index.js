@@ -6,6 +6,7 @@ import Immutable from 'immutable'
 import template from 'formalist-standard-react'
 import serialize from 'formalist-serialize-react'
 import debounce from 'lodash.debounce'
+import 'ric'
 
 import Perf from 'react-addons-perf'
 window.Perf = Perf
@@ -22,7 +23,8 @@ export default class App extends Component {
     super(props)
     let form = this.props.form
     this.state = {
-      formState: form.store.getState()
+      formState: form.store.getState(),
+      serialized: null,
     }
   }
 
@@ -30,11 +32,21 @@ export default class App extends Component {
     let form = this.props.form
     form.store.subscribe(
       debounce(() => {
+        const formState = form.store.getState()
+        let newState = {}
         if (showPerf) {
           Perf.start()
         }
+        if (showSerialize) {
+          requestUserIdle(() => {
+            this.setState({
+              serialized: serialize(formState.toJS()),
+            })
+          })
+        }
+
         this.setState({
-          formState: form.store.getState()
+          formState,
         }, () => {
           setTimeout(() => {
             if (showPerf) {
@@ -57,8 +69,8 @@ export default class App extends Component {
         <form method="post" action="">
           {form.render()}
           <button className="submitButton">Submit form</button>
-          {(showSerialize)
-            ? serialize(this.state.formState.toJS())
+          {(showSerialize && this.state.serialized)
+            ? this.state.serialized
             : null
           }
         </form>
