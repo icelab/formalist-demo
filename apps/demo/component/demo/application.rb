@@ -13,7 +13,7 @@ module Demo
     opts[:root] = Pathname(__FILE__).join("../..").realpath.dirname
 
     use Rack::Session::Cookie, key: "demo.session", secret: FormalistDemo::Container.settings.session_secret
-    use Rack::Csrf, raise: true
+    # use Rack::Csrf, raise: true
 
     plugin :flash
 
