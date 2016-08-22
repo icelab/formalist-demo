@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/icelab/formalist
-  revision: fe271fa1de3fcfdd77aff948451fa10837067daf
+  revision: bb9538758f1e48df430abfca200b4f796c2989cd
   branch: rte
   specs:
     formalist (0.3.0)
