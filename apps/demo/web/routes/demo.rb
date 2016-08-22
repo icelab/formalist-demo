@@ -5,8 +5,8 @@ class Demo::Application
     end
 
     r.post do
-      r.resolve "demo.operations.submit_form" do |submit_form|
-        submit_form.(r[:data]).match do |m|
+      r.resolve "submit_form" do |submit_form|
+        submit_form.(r.params).match do |m|
           m.success do
             r.redirect "/form"
           end

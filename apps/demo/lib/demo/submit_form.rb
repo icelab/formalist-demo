@@ -3,7 +3,7 @@ require "dry/monads/either"
 require "demo/form_schema"
 
 module Demo
-  class SubmitDemo
+  class SubmitForm
     include Dry::Monads::Either::Mixin
     include Dry::Matcher.for(:call, with: Dry::Matcher::EitherMatcher)
 
