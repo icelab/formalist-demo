@@ -1,59 +1,17 @@
 require "formalist"
 require "formalist/elements/standard"
+require "demo/import"
 
 module Demo
   class Form < Formalist::Form
+    include Demo::Import[image_with_caption_form: "forms.rich_text_embeds.image_with_caption"]
+
     define do
       rich_text_area :content,
         label: "Rich text area",
-        inline_formatters: [
-          :bold, :underline
-        ],
-        block_formatters: [
-          "unstyled", "header-one", "header-two", "unordered-list-item", "ordered-list-item", "blockquote", "pullquote", "code"
-        ],
-        embeddable_forms: {
-          "image_with_caption": {
-            label: "Image with caption",
-            template: [
-              ["field", ["text_field", "text_field", nil, [],
-                  ["object", [
-                      ["label", ["value", ["Text field"]]],
-                      ["hint", ["value", ["Text field hint"]]],
-                      ["placeholder", ["value", ["Text field placeholder"]]],
-                      ["validation", ["object", [
-                          ["filled", ["value", [true]]]
-                      ]]]
-                  ]]
-              ]],
-            ],
-          },
-          "there_is_two_of_them": {
-            label: "There is two of them",
-            template: [
-              ["field", ["text_field", "text_field", nil, [],
-                  ["object", [
-                      ["label", ["value", ["Text field"]]],
-                      ["hint", ["value", ["Text field hint"]]],
-                      ["placeholder", ["value", ["Text field placeholder"]]],
-                      ["validation", ["object", [
-                          ["filled", ["value", [true]]]
-                      ]]]
-                  ]]
-              ]],
-              ["field", ["text_field_two", "text_field", nil, [],
-                  ["object", [
-                      ["label", ["value", ["Text field two"]]],
-                      ["hint", ["value", ["Text field hint"]]],
-                      ["placeholder", ["value", ["Text field placeholder"]]],
-                      ["validation", ["object", [
-                          ["filled", ["value", [true]]]
-                      ]]]
-                  ]]
-              ]],
-            ],
-          },
-        }
+        inline_formatters: %w[bold underline],
+        block_formatters: %w[unstyled header-one header-two unordered-list-item ordered-list-item blockquote pullquote code],
+        embeddable_forms: dep(:embeddable_forms)
 
       text_field :text_field,
         label: "Text field",
@@ -163,6 +121,15 @@ module Demo
         date_field :compound_field_date_field,
           label: "Compound date field"
       end
+    end
+
+    def embeddable_forms
+      {
+        image_with_caption: {
+          label: "Image with caption",
+          form: image_with_caption_form
+        }
+      }
     end
   end
 end
