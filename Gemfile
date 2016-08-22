@@ -8,7 +8,7 @@ gem "dry-web", ">= 0.4.0"
 gem "dry-web-roda", ">= 0.3.0"
 gem "puma"
 gem "rack_csrf"
-gem "shotgun"
+gem "notgun"
 
 # Application dependencies
 gem "dry-matcher"
