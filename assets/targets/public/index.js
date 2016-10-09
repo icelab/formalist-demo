@@ -46,7 +46,7 @@ export default class App extends Component {
             }
           }, 1000)
         })
-      }, 250)
+      }, 30)
     )
   }
 
