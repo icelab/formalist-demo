@@ -51,10 +51,11 @@ export default class App extends Component {
   }
 
   render() {
-    let form = this.props.form
+    let {form, csrfToken} = this.props
     return (
       <div className="appWrapper">
         <form method="post" action="">
+          <input type="hidden" name="_csrf" value={csrfToken} />
           {form.render()}
           <button className="submitButton">Submit form</button>
           {(showSerialize)
@@ -98,13 +99,14 @@ const formConfig = {
  */
 const views = {
   form: (el, props) => {
+    let {ast, csrfToken} = props
     let configuredTemplate = template({}, formConfig)
-    let form = configuredTemplate(props.ast)
+    let form = configuredTemplate(ast)
 
     if (showPerf) {
       Perf.start()
     }
-    ReactDOM.render(<App form={form} />, el)
+    ReactDOM.render(<App form={form} csrfToken={csrfToken} />, el)
     if (showPerf) {
       Perf.stop()
       Perf.printInclusive()

@@ -4,6 +4,12 @@ require "formalist/elements/standard"
 module Demo
   class Form < Formalist::Form
     define do
+      rich_text_area :rich_text_area,
+        label: "Rich text area",
+        validation: {
+          filled: true
+        }
+
       text_field :text_field,
         label: "Text field",
         placeholder: "Text field placeholder",
