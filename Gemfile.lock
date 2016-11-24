@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/icelab/formalist
-  revision: 04207eda4ba586f209b6d16396e7a82bae89c1fc
+  revision: 7441e5b1a18c6c7a4cd3ec0dc8dfddbb914d19f0
   branch: master
   specs:
     formalist (0.3.0)
@@ -171,4 +171,4 @@ DEPENDENCIES
   slim
 
 BUNDLED WITH
-   1.12.5
+   1.13.6

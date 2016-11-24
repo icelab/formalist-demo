@@ -118,6 +118,24 @@ module Demo
         date_field :compound_field_date_field,
           label: "Compound date field"
       end
+
+      search_selection_field :search_selection_field,
+        label: "Search selection field",
+        search_url: "/search",
+        search_params: {
+          file_type: :image
+        },
+        search_per_page: 20,
+        search_threshold: 0
+
+      search_multi_selection_field :search_multi_selection_field,
+        label: "Search multi selection field",
+        search_url: "/search",
+        search_params: {
+          file_type: :image
+        },
+        search_per_page: 20,
+        search_threshold: 1
     end
   end
 end
