@@ -6,7 +6,7 @@ class Demo::Application
 
       # Return "real" data for existing values
       range = if r.params["ids"]
-        r.params["ids"].split(",").map(&:to_i)
+        r.params["ids"].map(&:to_i)
       else
         (1..per_page)
       end
