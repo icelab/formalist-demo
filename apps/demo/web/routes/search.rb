@@ -4,19 +4,25 @@ class Demo::Application
       page = (r.params["page"] || 1).to_i
       per_page = (r.params["per_page"] || 20).to_i
 
-      # sleep 1
+      # Return "real" data for existing values
+      range = if r.params["ids"]
+        r.params["ids"].split(",").map(&:to_i)
+      else
+        (1..per_page)
+      end
 
+      # Fake a no result if "noresult" is passed
       if r.params["q"] === "noresult"
         response = {
           results: [],
           pagination: {}
         }
       else
-        results = (1..per_page).map {|i|
+        results = range.map {|i|
           id = i + ((page - 1) * per_page)
           {
             id: id,
-            label: "Option #{id} for #{r.params["q"]}"
+            label: "Option #{id} for #{r.params["q"] || 'no-query'}"
           }
         }
 
