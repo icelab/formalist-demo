@@ -22,19 +22,18 @@ export default class App extends Component {
     super(props)
     let form = this.props.form
     this.state = {
-      formState: form.store.getState()
+      formState: form.getState()
     }
   }
 
   componentWillMount() {
     let form = this.props.form
-    form.store.subscribe(
-      debounce(() => {
+    form.on('change', debounce(() => {
         if (showPerf) {
           Perf.start()
         }
         this.setState({
-          formState: form.store.getState()
+          formState: form.getState()
         }, () => {
           setTimeout(() => {
             if (showPerf) {
